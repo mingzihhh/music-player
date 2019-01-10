@@ -1,0 +1,209 @@
+#bg-artwork{
+    position: fixed;
+    top: -30px;
+    left: -30px;
+    bottom: -30px;
+    right: -30px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+    z-index: 1;
+}
+#bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 0.3;
+    z-index: 2;
+}
+.flip-player {
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -175px;
+    margin-left: -175px;
+    z-index: 3;
+    overflow: hidden;
+    -webkit-transition: all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+.flip-player:hover {
+    transform: scale(1.05);
+}
+.music-player {
+    width: 100%;
+    height: 100%;;
+}
+.music-player .album {
+    /* position: absolute;/
+    top: 0;
+    left: 0; */
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.music-player .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 15px;
+    transform: translateY(40px);
+    transition: all .5s ease-in-out;
+}
+.music-player:hover .info {
+    transform: translateY(0px);
+}
+.music-player .progress .now-time {
+    float: left;
+    font-size: 12px;
+}
+.music-player .progress .total-time {
+    float:  right;
+    font-size: 12px;
+}
+.music-player .time {
+    position: relative;
+    margin: 0 40px;/*行高16px,外div高16px*/
+    padding-top: 7px;
+}
+.music-player .time .time-bar {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    display: inline-block;
+    height: 2px;
+    background-color: #f00;
+}
+.music-player .time .total-bar {
+    height: 2px;
+    background-color: black; 
+}
+.music-player .music-info {
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+.music-player .music-info .title {
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+.music-player .music-info .author {
+    margin-top: 3px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #333;  
+}
+.music-player .control {
+    margin-top: 10px;
+    cursor: pointer;
+}
+.music-player .control .iconfont {
+    font-size: 25px;
+}
+.music-player .control .like {
+    float: left;
+}
+.music-player .control .listBtn {
+   float: right;
+}
+.music-player .control .cut-song {
+    margin: 0 80px;
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+}
+.music-player .cut-song .play,
+.music-player .cut-song .previous,
+.music-player .cut-song .next
+ {
+    flex: 1;
+}
+.music-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+   
+}
+.music-list .list-header {
+    padding: 5px 10px;
+    background-color: rgba(11,11,11,0.1);
+}
+
+.music-list .back {
+    background: rgba(11, 11, 11, 0.2);
+    border-radius: 5px;  
+    line-height: 12px;
+    font-size: 12px;
+    padding: 0 2px 2px;
+}
+.music-list .back:hover,
+.music-list .back:active {
+    background-color: #f0bab6;
+}
+.music-list .back .icon-back {
+    vertical-align: middle;
+}
+.music-list .list-title {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+/* .music-player.music-list .menu {
+    padding: 0 10px;
+} */
+.music-list .song {
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(11, 11, 11, 0.2);
+}
+.music-list .song:hover,
+.music-list .song:active {
+    background-color: #fdecea;
+    border-color: #fdecea;
+}
+.music-list .song .thumbnail {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    float: left;
+}
+.music-list .song .number {
+    float: left;
+    margin-top: 5px;
+}
+.music-list .song .title {
+    margin-left: 75px;
+    letter-spacing: 1px;
+}
+.music-list .song .author {
+    margin-left: 75px;
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 1.5px;
+}
+.flip-player.player .music-player,
+.flip-player.list .music-list {
+    transform:  rotateY(0deg);
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+.flip-player.player .music-list,
+.flip-player.list .music-player {
+    transform:  rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 1s;
+}
+
+
