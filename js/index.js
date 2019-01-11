@@ -38,7 +38,7 @@ function setTime(time) {
 
 function getMusicList(callback) {
     var xml = new XMLHttpRequest();
-    xml.open('GET', '/music.json', true);
+    xml.open('GET', '../music.json', true);
     xml.onload = function () {
         if((xml.status >= 200&&xml.status <= 300)){
             musicList = JSON.parse(xml.responseText);
